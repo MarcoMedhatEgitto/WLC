@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <hta:application
+        applicationname="realtime_compiler"
+        border="thin"
+        caption="yes"
+        contextmenu="yes"
+        maximizable="yes"
+        minimizable="yes"
+        scroll="yes"
+        showintaskbar="yes"
+        singleinstance="yes"
+        sysmenu="yes"
+        ICON="logo.ico"
+    />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>realtime_compiler</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <label for="windows" style="font-size: larger;">Select the window to show</label>
+    <select id="windows" onchange="change()" name="windows">
+        <option value="all" selected>all</option>
+        <option value="htmlonly">Only HTML</option>
+        <option value="cssonly">Only CSS</option>
+        <option value="jsonly">Only JS</option>
+    </select>
+    <label for="saving">Save to files</label><button id="saving" onclick="saveit()">Save It</button>
+    <div class="container">
+        <div class="left">
+
+            <textarea id="html_code" onkeyup="run(); predict(event, 'html_code');" onkeydown="checkEnter(event, 'html_code');" placeholder="HTML" >
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+            <meta charset="UTF-8">
+                <title>Your title here</title>
+                <link rel="stylesheet" href="style.css">
+        </head>
+        <body>
+                    
+            <script src="script.js"></script>
+        </body>
+</html>
+            </textarea>
+
+            <textarea id="css_code" onkeyup="run(); predict(event, 'css_code');" onkeydown="checkEnter(event, 'css_code');" placeholder="CSS">
+body{
+    background-color:#fff;
+    color:black;
+}
+            </textarea>
+            
+            <textarea id="js_code" onkeyup="run(); predict(event, 'js_code');" onkeydown="checkEnter(event, 'js_code');" placeholder="JS"></textarea>
+        </div>
+        <div class="right">
+            <iframe id="output"></iframe>
+        </div>
+    </div>
+    <div id="prediction" style="position: fixed; bottom: 10px; left: 10px; font-size: larger; display: none;"></div>
+    <script src="script.js" defer></script>
+</body>
+
+</html>
