@@ -1,4 +1,4 @@
-# Real-Time Compiler
+# Web Live Compiler (WLC)
 
 ## Description
 This is a real-time HTML, CSS, and JavaScript compiler that allows users to write and preview code instantly. The application includes an integrated code editor for HTML, CSS, and JavaScript, and it dynamically updates the preview in an embedded iframe as you type. It also includes the ability to save the current code into separate files (`index.html`, `style.css`, and `script.js`) for download.
